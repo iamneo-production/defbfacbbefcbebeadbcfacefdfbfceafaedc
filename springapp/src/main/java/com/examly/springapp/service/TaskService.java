@@ -1,7 +1,7 @@
 package com.examly.springapp.service;
 import java.util.List;
 import com.examly.springapp.repository.TaskRepository;
-import com.examly.springapp.entity.Taskentity;
+import com.examly.springapp.model.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.Optional;
