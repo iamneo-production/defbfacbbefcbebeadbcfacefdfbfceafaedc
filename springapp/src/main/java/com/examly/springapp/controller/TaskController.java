@@ -19,14 +19,13 @@ public class TaskController {
     private TaskService service;
     
     @PostMapping("/saveTask")
-    public Taskentity saveTask(@RequestBody Task task){
-        Taskentity output = service.saveTask(task);
+    public Task saveTask(@RequestBody Task task){
+        Task output = service.saveTask(task);
         return output;
     }
 
-
     @GetMapping("/changeStatus")
-    private Taskentity updatetaskStatus(@RequestParam("id") String id){
+    private Task updatetaskStatus(@RequestParam("id") String id){
         return service.updatetaskStatus(id);
     }
 
@@ -35,12 +34,12 @@ public class TaskController {
         return service.deleteTask(id);
     }
     @GetMapping("/alltasks")
-    private List<Taskentity> getallTasks(){
+    private List<Task> getallTasks(){
         return service.getallTasks();
     }
 
     @GetMapping("/getTask")
-    private Taskentity getTask(@RequestParam("id") String id){
+    private Task getTask(@RequestParam("id") String id){
         return service.gettaskbyid(id);
     }
 

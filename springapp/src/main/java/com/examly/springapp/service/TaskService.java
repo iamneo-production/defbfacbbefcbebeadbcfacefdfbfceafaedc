@@ -2,7 +2,7 @@ package com.examly.springapp.service;
 
 import java.util.List;
 import com.examly.springapp.repository.TaskRepository;
-import com.examly.springapp.entity.Taskentity;
+import com.examly.springapp.model.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.Optional;
@@ -12,17 +12,17 @@ public class TaskService {
     @Autowired
     private TaskRepository repository;
 
-    public Taskentity saveTask(Taskentity taskentity){
-        repository.save(taskentity);
-        return taskentity;
+    public Task saveTask(Task task){
+        repository.save(task);
+        return task;
     }
 
-    public Taskentity updatetaskStatus(String taskId){
-        Optional<Taskentity> taskentity = repository.findByTaskId(taskId);
-        if(taskentity.isPresent()){
-            taskentity.get().setTaskStatus("Accepted");
-            repository.save(taskentity.get());
-            return taskentity.get();
+    public Task updatetaskStatus(String taskId){
+        Optional<Task> task = repository.findByTaskId(taskId);
+        if(task.isPresent()){
+            task.get().setTaskStatus("Accepted");
+            repository.save(task.get());
+            return task.get();
         }
         return null;
         
