@@ -25,32 +25,26 @@ public class TaskService {
             return task.get();
         }
         return null;
-        
     }
 
-
     public String deleteTask(String id){
-        Optional<Taskentity> taskentity = repository.findByTaskId(id);
-        if(taskentity.isPresent()){
+        Optional<Task> task = repository.findByTaskId(id);
+        if(task.isPresent()){
             repository.deleteByTaskId(id);
             return"Task Deleted Successfully";
         }
         return "User not Found";
     }
 
-
-    public List<Taskentity> getallTasks(){
+    public List<Task> getallTasks(){
         return repository.findAll();
     }
 
-    public Taskentity gettaskbyid(String id){
-        Optional<Taskentity> taskentity = repository.findByTaskId(id);
-        if(taskentity.isPresent()){
-            return taskentity.get();
+    public Task gettaskbyid(String id){
+        Optional<Task> task = repository.findByTaskId(id);
+        if(task.isPresent()){
+            return task.get();
         }
         return null;
     }
-
-    
-
 }

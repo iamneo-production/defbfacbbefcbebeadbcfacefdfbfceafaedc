@@ -1,3 +1,5 @@
+package com.examly.springapp.model;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -44,7 +46,6 @@ public class Task {
     public void setTaskStatus(String taskStatus){
         this.taskStatus = taskStatus;
     }
-
     public Task(String taskId, String taskHolderName, String taskDate, String taskName, String taskStatus) {
         this.taskId = taskId;
         this.taskHolderName = taskHolderName;
@@ -52,5 +53,5 @@ public class Task {
         this.taskName = taskName;
         this.taskStatus = taskStatus;
     }
-  public Task() {}  
+    public Task() {}  
 }
