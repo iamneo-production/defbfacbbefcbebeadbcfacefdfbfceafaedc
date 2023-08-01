@@ -1,6 +1,6 @@
 package com.examly.springapp.controller;
 
-import com.examly.springapp.entity.Taskentity;
+import com.examly.springapp.model.Task;
 import com.examly.springapp.service.TaskService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +19,8 @@ public class TaskController {
     private TaskService service;
     
     @PostMapping("/saveTask")
-    public Taskentity saveTask(@RequestBody Taskentity taskentity){
-        Taskentity output = service.saveTask(taskentity);
+    public Taskentity saveTask(@RequestBody Task task){
+        Taskentity output = service.saveTask(task);
         return output;
     }
 

@@ -9,5 +9,4 @@ import java.util.Optional;
 public interface TaskRepository  extends JpaRepository<Taskentity,String>{
 Optional<Taskentity> findByTaskId(String taskid);
 void deleteByTaskId(String taskid);
-
 }

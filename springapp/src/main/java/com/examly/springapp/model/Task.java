@@ -4,7 +4,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Task")
-public class Taskentity {
+public class Task {
 
     @Id
     private String taskId;
@@ -45,14 +45,12 @@ public class Taskentity {
         this.taskStatus = taskStatus;
     }
 
-    public Taskentity(String taskId, String taskHolderName, String taskDate, String taskName, String taskStatus) {
+    public Task(String taskId, String taskHolderName, String taskDate, String taskName, String taskStatus) {
         this.taskId = taskId;
         this.taskHolderName = taskHolderName;
         this.taskDate = taskDate;
         this.taskName = taskName;
         this.taskStatus = taskStatus;
     }
-  public Taskentity(){
-      
-  }  
+  public Task() {}  
 }
